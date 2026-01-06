@@ -1,12 +1,13 @@
 FROM nginx:alpine
 
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-RUN apt-get update && apt-get install -y \
-build-essential \
-curl \
-&& rm -rf /var/lib/apt/lists/*
+RUN rm -rf ./*
 
-COPY . .
+RUN apl add --no-cache \
+build-base \
+curl 
+
+COPY /app/index.html .
 
 EXPOSE 80
