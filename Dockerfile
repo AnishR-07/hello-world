@@ -4,7 +4,7 @@ WORKDIR /usr/share/nginx/html
 
 RUN rm -rf ./*
 
-RUN apl add --no-cache \
+RUN apk add --no-cache \
 build-base \
 curl 
 
