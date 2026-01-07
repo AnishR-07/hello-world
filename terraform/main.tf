@@ -7,8 +7,8 @@ module "eks" {
   cluster_name    = "hello-world-eks"
   cluster_version = "1.29"
 
-  subnet_ids = ["subnet-05ef67abd57814ae6", "subnet-00a89e0846cd5c0cb"]
-  vpc_id     = "vpc-027f39b8517af70bc"
+  subnet_ids = ["subnet-02614912b37d1664a", "subnet-0dc19f6e762c0c9b1"]
+  vpc_id     = "vpc-080fd2ddd39d87fb1"
 
   eks_managed_node_groups = {
     node_group = {
