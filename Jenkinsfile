@@ -36,6 +36,7 @@ pipeline {
                 script {
                     withCredentials([file(credentialsId: 'KUBECONFIG_CRED', variable: 'KUBECONFIG')]) {
                         sh '''
+                        cd manifest
                         sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
                         kubectl apply -f deployment.yaml
                         kubectl apply -f service.yaml
