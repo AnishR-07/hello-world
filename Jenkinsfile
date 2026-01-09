@@ -4,6 +4,7 @@ pipeline {
         DOCKER_HUB_REPO = "anishr0007/hello-world"
         DOCKER_HUB_CREDENTIALS_ID = "docker-id"
         KUBECONFIG_CRED = "KUBECONFIG_CRED"
+        AWS_CRED_ID = "AWS_ID"
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
     stages {
@@ -38,6 +39,9 @@ pipeline {
                         sh '''
                         cd manifest
                         sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
+                        export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+                        export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+                        export AWS_DEFAULT_REGION=us-east-1
                         kubectl apply -f deployment.yaml
                         kubectl apply -f service.yaml
                         kubectl rollout status deployment/hello-world-deployment
