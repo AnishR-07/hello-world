@@ -39,7 +39,7 @@ pipeline {
                         sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
                         kubectl apply -f deployment.yaml
                         kubectl apply -f service.yaml
-                        kubectl rollout status deployment/<deployment-name>
+                        kubectl rollout status deployment/hello-world-deployment
                         '''
                     }
                 }
