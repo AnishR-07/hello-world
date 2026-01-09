@@ -43,12 +43,11 @@ docker build -t hello-world:latest .
 docker run -p 8080:8080 hello-world:latest
 ✔ This helps in consistent runtime environments for Dev, QA, and Production.
 
-#📄 Deployment Manifests
+
+📄 Deployment Manifests
 ---
 Inside the manifest directory, you’ll find deployment YAML files.
 For example:
-
----
 
 bash
 Copy code
@@ -56,8 +55,8 @@ kubectl apply -f manifest/deployment.yaml
 kubectl apply -f manifest/service.yaml
 These manifests declare how the app runs in the cluster.
 
----
 💻 Infrastructure as Code (Terraform)
+---
 The terraform folder contains Terraform configurations to provision infrastructure such as:
 
 ✔ Cloud resources (EC2 (Virtual machines), Networking, ELB (Load Balancers) )
@@ -74,6 +73,7 @@ terraform apply
 Always review the plan before applying.
 
 🤖 CI/CD with Jenkins
+---
 The Jenkinsfile defines a pipeline that:
 
 Checks out code from the repository
@@ -108,6 +108,7 @@ pipeline {
 (Adjust credentials and registry details as needed.)
 
 📌 Conclusion
+---
 This DevOps “Hello World” project demonstrates:
 
 ✅ Source code management (Git)
