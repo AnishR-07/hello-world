@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_HUB_REPO = "anishr0007/hello-world"
         DOCKER_HUB_CREDENTIALS_ID = "docker-id"
-        KUBECONFIG_CRED = "eks-kubeconfig"
+        KUBECONFIG_CRED = "KUBECONFIG_CRED"
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
     stages {
