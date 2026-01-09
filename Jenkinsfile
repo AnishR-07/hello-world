@@ -39,8 +39,8 @@ pipeline {
                         sh '''
                         cd manifest
                         sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
-                        export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-                        export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+                        export AWS_ACCESS_KEY_ID=${AWS_ID}
+                        export AWS_SECRET_ACCESS_KEY=${AWS_ID}
                         export AWS_DEFAULT_REGION=us-east-1
                         kubectl apply -f deployment.yaml
                         kubectl apply -f service.yaml
