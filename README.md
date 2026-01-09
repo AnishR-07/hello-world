@@ -16,12 +16,12 @@ The goal of this project is to showcase best practices in DevOps workflows inclu
 ## 📁 Project Structure
 
 hello-world/
-├── app/ # Application source code
-├── manifest/ # service and deployment manifests
-├── terraform/ # Terraform infrastructure as code
-├── Dockerfile # Docker image definition
-├── Jenkinsfile # CI/CD pipeline definition
-├── README.md # Project documentation
+app/ # Application source code
+manifest/ # service and deployment manifests
+terraform/ # Terraform infrastructure as code
+Dockerfile # Docker image definition
+Jenkinsfile # CI/CD pipeline definition
+README.md # Project documentation
 
 
 
