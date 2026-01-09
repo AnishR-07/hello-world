@@ -34,7 +34,7 @@ pipeline {
         stage('Deployment YAML to EKS') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'KUBECONFIG_CRED', usernameVariable: 'KUBECONFIG')]) {
+                    withCredentials([file(credentialsId: 'KUBECONFIG_CRED', variable: 'KUBECONFIG')]) {
                         sh '''
                         sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
                         kubectl apply -f deployment.yaml
