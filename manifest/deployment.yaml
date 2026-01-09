@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: anishr0007/hello-world:latest
+        image: anishr0007/hello-world:IMAGE_TAG
         ports:
         - containerPort: 80
