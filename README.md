@@ -43,7 +43,7 @@ docker build -t hello-world:latest .
 docker run -p 8080:8080 hello-world:latest
 ✔ This helps in consistent runtime environments for Dev, QA, and Production.
 
-**📄 Deployment Manifests**
+#📄 Deployment Manifests
 Inside the manifest directory, you’ll find deployment YAML files.
 For example:
 
