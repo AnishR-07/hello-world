@@ -12,7 +12,6 @@ The goal of this project is to showcase best practices in DevOps workflows inclu
 ✔ Containerization with Docker  
 ✔ CI/CD automation using Jenkins  
 
----
 
 ## 📁 Project Structure
 
@@ -24,7 +23,7 @@ hello-world/
 ├── Jenkinsfile # CI/CD pipeline definition
 ├── README.md # Project documentation
 
----
+
 
 ## 🚀 Application
 
@@ -36,16 +35,16 @@ I used Docker to containerize the app. Build and run the image with:
 
 bash
 Copy code
-# Build the Docker image
+## Build the Docker image
 docker build -t hello-world:latest .
 
-# Run the Docker container
+## Run the Docker container
 docker run -p 8080:8080 hello-world:latest
 ✔ This helps in consistent runtime environments for Dev, QA, and Production.
 
 
-📄 Deployment Manifests
----
+## 📄 Deployment Manifests 
+
 Inside the manifest directory, you’ll find deployment YAML files.
 For example:
 
@@ -55,8 +54,8 @@ kubectl apply -f manifest/deployment.yaml
 kubectl apply -f manifest/service.yaml
 These manifests declare how the app runs in the cluster.
 
-💻 Infrastructure as Code (Terraform)
----
+## 💻 Infrastructure as Code (Terraform) 
+
 The terraform folder contains Terraform configurations to provision infrastructure such as:
 
 ✔ Cloud resources (EC2 (Virtual machines), Networking, ELB (Load Balancers) )
@@ -72,8 +71,8 @@ terraform plan
 terraform apply
 Always review the plan before applying.
 
-🤖 CI/CD with Jenkins
----
+## 🤖 CI/CD with Jenkins
+
 The Jenkinsfile defines a pipeline that:
 
 Checks out code from the repository
@@ -108,7 +107,7 @@ pipeline {
 (Adjust credentials and registry details as needed.)
 
 📌 Conclusion
----
+
 This DevOps “Hello World” project demonstrates:
 
 ✅ Source code management (Git)
@@ -122,5 +121,3 @@ If you have questions, feel free to reach out!
 
 yaml
 Copy code
-
----
