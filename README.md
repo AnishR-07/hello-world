@@ -44,8 +44,11 @@ docker run -p 8080:8080 hello-world:latest
 ✔ This helps in consistent runtime environments for Dev, QA, and Production.
 
 #📄 Deployment Manifests
+---
 Inside the manifest directory, you’ll find deployment YAML files.
 For example:
+
+---
 
 bash
 Copy code
@@ -53,6 +56,7 @@ kubectl apply -f manifest/deployment.yaml
 kubectl apply -f manifest/service.yaml
 These manifests declare how the app runs in the cluster.
 
+---
 💻 Infrastructure as Code (Terraform)
 The terraform folder contains Terraform configurations to provision infrastructure such as:
 
