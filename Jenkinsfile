@@ -35,21 +35,27 @@ pipeline {
         stage('Deployment YAML to EKS') {
             steps {
                 script {
+                    // 1. Fetch the Kubeconfig file
                     withCredentials([file(credentialsId: 'KUBECONFIG_CRED', variable: 'KUBECONFIG')]) {
-                        sh '''
-                        cd manifest
-                        sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
-                        export AWS_ACCESS_KEY_ID=${AWS_CRED_ID}
-                        export AWS_SECRET_ACCESS_KEY=${AWS_CRED_ID}
-                        export AWS_DEFAULT_REGION=us-east-1
-                        kubectl apply -f deployment.yaml
-                        kubectl apply -f service.yaml
-                        kubectl rollout status deployment/hello-world-deployment
-                        '''
+                        
+                        // 2. Fetch the AWS Keys using the ID "AWS_ID"
+                        withCredentials([usernamePassword(credentialsId: "${AWS_CRED_ID}", 
+                                         passwordVariable: 'AWS_SECRET', 
+                                         usernameVariable: 'AWS_ACCESS')]) {
+                            sh """
+                            cd manifest
+                            sed -i "s|IMAGE_TAG|${IMAGE_TAG}|g" deployment.yaml
+                            export AWS_ACCESS_KEY_ID="${AWS_ACCESS}"
+                            export AWS_SECRET_ACCESS_KEY="${AWS_SECRET}"
+                            export AWS_DEFAULT_REGION="us-east-1"
+                            kubectl apply -f deployment.yaml
+                            kubectl apply -f service.yaml
+                            kubectl rollout status deployment/hello-world-deployment
+                            """
+                        }
                     }
                 }
             }
         }
-    
     }
 }
