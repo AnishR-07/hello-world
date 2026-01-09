@@ -1,4 +1,4 @@
-Hello World DevOps Project
+Hello World (DevOps Project)
 
 ## 🔹 Overview
 
